@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="내 몸과 일정에 맞춘 건강한 변화. FitPath 맞춤 다이어트 플랜과 웰니스 스토어." />
+    <title>FitPath | 나에게 맞는 건강한 변화</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="FitPath 홈">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span>fitpath</span>
+        </a>
+        <nav class="desktop-nav" aria-label="주요 메뉴">
+          <a class="nav-link active" href="#plan">맞춤 플랜</a>
+          <a class="nav-link" href="#store">스토어</a>
+          <a class="nav-link" href="#records">내 기록</a>
+          <a class="nav-link" href="#orders">구매 내역</a>
+        </nav>
+        <div class="top-actions">
+          <button class="icon-btn" id="cartButton" aria-label="장바구니 열기"><span>▱</span><b id="cartCount">0</b></button>
+          <button class="profile-pill" id="profileButton"><span class="avatar-mini">J</span><span class="profile-name">내 플랜</span><span class="chevron">⌄</span></button>
+        </div>
+      </header>
+
+      <main id="top">
+        <section class="hero-section section-pad">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> WELLNESS COMMERCE</div>
+            <h1>내 몸과 일정에 맞춘<br /><em>건강한 변화</em>를 시작해요.</h1>
+            <p class="hero-sub">목표 기간을 정하면 운동·식단·건강기능식품 가이드와<br class="desktop-only" /> 현재 조건 기반의 변화 모형을 한 번에 확인할 수 있어요.</p>
+            <div class="hero-ctas">
+              <button class="btn btn-primary btn-lg" data-scroll="#plan">나의 플랜 만들기 <span>→</span></button>
+              <button class="text-btn" data-scroll="#store">상품 먼저 둘러보기 <span>↗</span></button>
+            </div>
+            <div class="hero-proof"><span class="proof-avatars"><i>H</i><i>M</i><i>S</i></span><span>꾸준한 변화를 시작한 <strong>2,400+</strong>명의 이야기</span></div>
+          </div>
+          <div class="hero-visual" aria-label="건강한 생활을 상징하는 일러스트">
+            <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+            <div class="hero-leaf leaf-one">✦</div><div class="hero-leaf leaf-two">✧</div>
+            <div class="hero-avatar-wrap"><div class="hero-avatar"><div class="hero-head"></div><div class="hero-hair"></div><div class="hero-neck"></div><div class="hero-body"></div><div class="hero-arm arm-left"></div><div class="hero-arm arm-right"></div><div class="hero-leg leg-left"></div><div class="hero-leg leg-right"></div></div></div>
+            <div class="hero-float-card float-top"><span class="float-icon">↗</span><div><b>+12%</b><small>이번 주 활동량</small></div></div>
+            <div class="hero-float-card float-bottom"><span class="float-icon green">✓</span><div><b>4주차 체크인</b><small>잘하고 있어요</small></div></div>
+          </div>
+        </section>
+
+        <section class="trust-strip">
+          <div><span class="trust-icon">◌</span><div><strong>나만을 위한 설계</strong><small>입력한 일정과 선호 반영</small></div></div>
+          <div><span class="trust-icon">⌁</span><div><strong>투명한 추천</strong><small>추천 이유와 성분 공개</small></div></div>
+          <div><span class="trust-icon">♡</span><div><strong>부담 없는 시작</strong><small>보조식품은 선택 사항</small></div></div>
+          <div><span class="trust-icon">↺</span><div><strong>기록으로 확인</strong><small>예상과 실제를 비교</small></div></div>
+        </section>
+
+        <section class="workspace section-pad" id="plan">
+          <div class="section-heading">
+            <div><div class="eyebrow">YOUR STARTING POINT</div><h2>먼저, 나의 목표를 알려주세요.</h2><p>값을 바꾸면 오른쪽 모형과 추천 플랜이 바로 업데이트돼요.</p></div>
+            <div class="stepper" aria-label="플랜 만들기 단계"><span class="step active">01 <small>기본 정보</small></span><i></i><span class="step active">02 <small>목표 설정</small></span><i></i><span class="step"><small>플랜 선택</small></span></div>
+          </div>
+          <div class="builder-grid">
+            <div class="input-card card">
+              <div class="card-topline"><span class="card-kicker">STEP 01</span><span class="saved-chip" id="draftState">자동 저장됨</span></div>
+              <h3>나의 기본 정보</h3>
+              <p class="card-desc">닉네임과 현재 상태를 기준으로 더 편안한 플랜을 만들어요.</p>
+              <div class="form-grid">
+                <label class="field full"><span>이름 또는 닉네임</span><input id="nameInput" type="text" value="지우" maxlength="20" autocomplete="nickname" /></label>
+                <label class="field"><span>연령대</span><select id="ageInput"><option value="20">20대</option><option value="30" selected>30대</option><option value="40">40대</option><option value="50">50대</option><option value="60">60대 이상</option></select></label>
+                <fieldset class="field gender-field"><legend>계산 기준</legend><div class="segmented"><label><input type="radio" name="gender" value="female" checked /><span>여성</span></label><label><input type="radio" name="gender" value="male" /><span>남성</span></label><label><input type="radio" name="gender" value="none" /><span>선택 안 함</span></label></div></fieldset>
+                <label class="field"><span>키 <small>cm</small></span><input id="heightInput" type="number" min="130" max="220" step="0.1" value="168" /></label>
+                <label class="field"><span>현재 체중 <small>kg</small></span><input id="weightInput" type="number" min="35" max="250" step="0.1" value="72" /></label>
+              </div>
+              <div class="form-divider"></div>
+              <div class="card-topline"><span class="card-kicker">STEP 02</span><span class="soft-label">목표를 정해요</span></div>
+              <h3>얼마나 오래, 어디까지?</h3>
+              <div class="goal-summary"><div><small>목표 기간</small><strong id="monthsReadout">6개월</strong></div><div><small>목표 체중</small><strong><span id="goalReadout">64.0</span><small> kg</small></strong></div><div><small>총 변화량</small><strong class="accent-text" id="lossReadout">−8.0 kg</strong></div></div>
+              <label class="range-field"><span>기간 <b id="monthsRangeLabel">6개월</b></span><input id="monthsInput" type="range" min="1" max="12" step="1" value="6" /><span class="range-ends"><small>1개월</small><small>12개월</small></span></label>
+              <label class="field goal-field"><span>목표 체중 <small>kg</small></span><input id="goalInput" type="number" min="35" max="250" step="0.1" value="64" /></label>
+              <div class="safety-banner safe" id="safetyBanner"><span class="status-icon">✓</span><div><strong id="safetyTitle">무리 없는 목표 속도예요.</strong><span id="safetyText">주당 평균 0.31kg 변화를 기준으로 안내할게요.</span></div></div>
+              <div class="consent-row"><label><input type="checkbox" id="consentInput" checked /> <span>내 플랜 생성을 위한 정보 처리에 동의합니다.</span></label><button class="help-btn" aria-label="정보 처리 안내">?</button></div>
+            </div>
+
+            <div class="result-column">
+              <div class="result-card card">
+                <div class="result-card-head"><div><span class="card-kicker">LIVE PREVIEW</span><h3><span id="helloName">지우</span>님을 위한 변화 모형</h3></div><span class="live-dot"><i></i> 실시간 반영</span></div>
+                <div class="model-stage">
+                  <div class="model-card current-model"><span class="model-label">CURRENT</span><div class="avatar-scene"><div class="scene-orb"></div><div class="body-avatar" id="currentAvatar"><div class="body-head"></div><div class="body-neck"></div><div class="body-torso"></div><div class="body-waist"></div><div class="body-hip"></div><div class="body-leg left"></div><div class="body-leg right"></div></div></div><strong><span id="currentWeightModel">72.0</span><small> kg</small></strong><small>현재 입력값 모형</small></div>
+                  <div class="model-divider"><span>→</span></div>
+                  <div class="model-card target-model"><span class="model-label target">TARGET</span><div class="avatar-scene"><div class="scene-orb orb-target"></div><div class="body-avatar" id="targetAvatar"><div class="body-head"></div><div class="body-neck"></div><div class="body-torso"></div><div class="body-waist"></div><div class="body-hip"></div><div class="body-leg left"></div><div class="body-leg right"></div></div></div><strong><span id="targetWeightModel">64.0</span><small> kg</small></strong><small><span id="targetMonthsModel">6개월</span> 목표 체중 기준 모형</small></div>
+                </div>
+                <div class="model-disclaimer">ⓘ 얼굴 없는 일러스트로 만든 참고용 모형이에요. 실제 체형·건강 변화나 결과를 예측하거나 보장하지 않습니다.</div>
+                <div class="metric-row"><div><span>BMI 참고값</span><strong id="bmiReadout">25.5 <small>→ 22.7</small></strong></div><div><span>예상 체크인</span><strong id="checkinReadout">24회</strong></div><div><span>주당 목표 변화</span><strong id="paceReadout">0.31kg</strong></div></div>
+              </div>
+              <div class="action-row"><button class="btn btn-secondary" id="saveSnapshot"><span>＋</span> 기록 저장</button><button class="btn btn-primary" data-scroll="#guide">맞춤 플랜 보기 <span>→</span></button></div>
+              <div class="mini-note"><span>✦</span><span>입력값은 언제든 수정할 수 있고, 저장한 기록은 비교해서 볼 수 있어요.</span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="guide-section section-pad" id="guide">
+          <div class="section-heading compact"><div><div class="eyebrow">YOUR 6-MONTH PATH</div><h2>목표까지, 세 단계로 가볍게.</h2><p>운동·식단·건강기능식품을 한 단계씩 조합해 선택하세요.</p></div><button class="outline-btn" data-scroll="#store">상품 구성 보기 <span>→</span></button></div>
+          <div class="path-timeline"><div class="path-line"></div><article class="stage-card stage-one"><div class="stage-index">01 <span>적응기</span></div><div class="stage-meta"><strong>생활 리듬 만들기</strong><span>1–5주차</span></div><div class="stage-body"><div><span class="track-icon exercise">↗</span><div><b>운동</b><p>걷기 · 기초 근력</p></div></div><div><span class="track-icon meal">◒</span><div><b>식단</b><p>규칙적인 식사 · 5일 박스</p></div></div><div><span class="track-icon supplement">✦</span><div><b>보조식품</b><p>필요할 때만 1개 선택</p></div></div></div><span class="stage-status">지금 시작</span></article><article class="stage-card stage-two"><div class="stage-index">02 <span>진행기</span></div><div class="stage-meta"><strong>나에게 맞는 속도 찾기</strong><span>6–20주차</span></div><div class="stage-body"><div><span class="track-icon exercise">↗</span><div><b>운동</b><p>유산소 + 근력 루틴</p></div></div><div><span class="track-icon meal">◒</span><div><b>식단</b><p>균형 식단 · 정기 배송</p></div></div><div><span class="track-icon supplement">✦</span><div><b>보조식품</b><p>성분 중복 없이 선택</p></div></div></div><span class="stage-status">다음 단계</span></article><article class="stage-card stage-three"><div class="stage-index">03 <span>유지기</span></div><div class="stage-meta"><strong>내 일상에 오래 남기기</strong><span>21–24주차+</span></div><div class="stage-body"><div><span class="track-icon exercise">↗</span><div><b>운동</b><p>회복 · 지속 가능한 루틴</p></div></div><div><span class="track-icon meal">◒</span><div><b>식단</b><p>일반식 전환 · 유지 박스</p></div></div><div><span class="track-icon supplement">✦</span><div><b>보조식품</b><p>필요성 다시 확인</p></div></div></div><span class="stage-status">도착점</span></article></div>
+        </section>
+
+        <section class="store-section section-pad" id="store">
+          <div class="section-heading compact"><div><div class="eyebrow">CURATED STORE</div><h2>지우님을 위해 고른 구성</h2><p>추천은 안전 조건을 먼저 확인하고, 언제든 상품을 바꿀 수 있어요.</p></div><div class="store-filters"><button class="filter-chip active">전체 <span>4</span></button><button class="filter-chip">식단 <span>2</span></button><button class="filter-chip">건강기능식품 <span>2</span></button></div></div>
+          <div class="product-grid" id="productGrid"></div>
+          <div class="store-footer"><span>건강기능식품은 식단과 운동을 대체하지 않는 선택 사항입니다.</span><button class="text-btn" data-scroll="#orders">내 구매 내역 보기 <span>↗</span></button></div>
+        </section>
+
+        <section class="records-section section-pad" id="records">
+          <div class="records-heading"><div><div class="eyebrow">MY RECORDS</div><h2>변화를 기록하면,<br /><em>다음 선택</em>이 쉬워져요.</h2><p>저장한 목표와 실제 체크인을 한 화면에서 비교해 보세요.</p></div><div class="progress-ring"><svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="50"></circle><circle class="ring-progress" id="progressRing" cx="60" cy="60" r="50"></circle></svg><div><strong id="progressValue">0%</strong><span>목표 진행률</span></div></div></div>
+          <div class="record-grid"><div class="checkin-card card"><div class="card-topline"><span class="card-kicker">WEEKLY CHECK-IN</span><span class="next-date">다음 체크인 · 금요일</span></div><h3>이번 주의 나를 남겨요.</h3><div class="checkin-form"><label class="field"><span>현재 체중 <small>kg</small></span><input id="checkinWeight" type="number" min="35" max="250" step="0.1" placeholder="72.0" /></label><label class="field"><span>오늘의 컨디션</span><select id="checkinMood"><option>가벼워요</option><option>보통이에요</option><option>조금 지쳐요</option></select></label><button class="btn btn-primary" id="addCheckin">체크인 저장 <span>→</span></button></div><div class="checkin-message" id="checkinMessage">작은 기록도 충분히 의미 있어요.</div></div><div class="snapshot-card card"><div class="card-topline"><span class="card-kicker">SAVED SNAPSHOTS</span><button class="text-btn small" id="clearSnapshots">전체 보기</button></div><div id="snapshotList" class="snapshot-list"><div class="empty-state">아직 저장한 기록이 없어요.<br /><button class="text-btn" data-scroll="#plan">첫 기록 남기기 →</button></div></div></div></div>
+        </section>
+
+        <section class="orders-section section-pad" id="orders">
+          <div class="section-heading compact"><div><div class="eyebrow">PURCHASE HISTORY</div><h2>내 플랜과 함께한 주문</h2><p>구매 당시의 플랜·상품·가격을 그대로 기록해요.</p></div><span class="order-count" id="orderCount">0건</span></div>
+          <div class="orders-card card" id="ordersList"><div class="empty-state">아직 구매 내역이 없어요.<br /><button class="text-btn" data-scroll="#store">스토어 둘러보기 →</button></div></div>
+        </section>
+
+        <section class="gift-section section-pad"><div class="gift-card"><div class="gift-copy"><span class="eyebrow lime">A LITTLE CELEBRATION</span><h2>꾸준히 이어온 나에게,<br /><em>작은 축하</em>를 준비했어요.</h2><p>목표 체중만이 아니라 체크인과 유지 습관을 함께 달성하면 기프트를 선택할 수 있어요.</p><button class="btn btn-light" id="giftButton">기프트 조건 확인 <span>→</span></button></div><div class="gift-visual"><div class="gift-spark spark-one">✦</div><div class="gift-spark spark-two">✧</div><div class="gift-box"><div class="gift-ribbon-v"></div><div class="gift-ribbon-h"></div><div class="gift-lid"></div></div><div class="gift-tag">YOUR<br /><strong>MOMENT</strong></div></div></div></section>
+      </main>
+
+      <footer class="footer"><div class="brand footer-brand"><span class="brand-mark"><span></span><span></span><span></span></span><span>fitpath</span></div><p>체중을 약속하지 않고, 건강한 선택을 함께 기록합니다.</p><div class="footer-links"><a href="#top">서비스 안내</a><a href="#top">개인정보 처리</a><a href="#top">고객센터</a></div><small>© 2026 FitPath. Demo experience.</small></footer>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-label="장바구니">
+      <div class="drawer-header"><div><span class="eyebrow">YOUR BAG</span><h2>장바구니</h2></div><button class="close-btn" id="closeCart" aria-label="장바구니 닫기">×</button></div>
+      <div class="drawer-body" id="cartItems"><div class="empty-state">아직 담은 상품이 없어요.<br /><button class="text-btn" data-scroll="#store">상품 보러 가기 →</button></div></div>
+      <div class="drawer-footer"><div><span>예상 금액</span><strong id="cartTotal">₩0</strong></div><button class="btn btn-primary btn-block" id="checkoutButton">데모 주문하기 <span>→</span></button><small>실제 결제가 아닌 체험용 주문입니다.</small></div>
+    </aside>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-icon">✓</span><span id="toastText">저장했어요.</span></div>
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal" id="giftModal" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle"><button class="close-btn modal-close" id="closeGift">×</button><div class="modal-icon">✦</div><div class="eyebrow lime">YOUR MOMENT</div><h2 id="giftModalTitle">기프트까지 한 걸음 더</h2><p>주간 체크인 4회와 유지기 완료를 목표로 해요. 빠른 감량이나 구매량은 기프트 조건에 포함되지 않아요.</p><div class="gift-progress"><div><span>체크인</span><strong id="giftCheckins">0 / 4</strong></div><div class="progress-bar"><i id="giftProgressBar"></i></div></div><button class="btn btn-primary btn-block" id="closeGiftCta">좋아요, 기록 이어가기</button></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

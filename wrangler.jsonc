@@ -1,0 +1,14 @@
+{
+  "name": "fitpath-demo",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-29",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}
