@@ -1,4 +1,4 @@
-import bcrypt from "bcryptjs";
+import * as bcrypt from "bcryptjs";
 const json=(d,s=200,h={})=>new Response(JSON.stringify(d),{status:s,headers:{"content-type":"application/json; charset=utf-8",...h}});
 const cookie=(v,max=2592000)=>`fitpath_session=${v}; Path=/; Max-Age=${max}; HttpOnly; Secure; SameSite=Lax`;
 const tokenFrom=(r)=>r.headers.get("Cookie")?.split(";").map(x=>x.trim()).find(x=>x.startsWith("fitpath_session="))?.slice(16)||null;
