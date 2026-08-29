@@ -131,6 +131,7 @@ function renderProducts() {
 }
 
 function toggleCart(id) {
+  if (!accountUser) { showToast("장바구니를 사용하려면 먼저 로그인해 주세요."); openAccount(); return; }
   if (state.cart.includes(id)) state.cart = state.cart.filter((item) => item !== id);
   else state.cart.push(id);
   persist(); renderProducts(); renderCart(); showToast(state.cart.includes(id) ? "장바구니에 담았어요." : "장바구니에서 뺐어요.");
@@ -185,12 +186,13 @@ function updateGiftProgress() {
 }
 
 function checkout() {
+  if (!accountUser) { showToast("주문하려면 먼저 로그인해 주세요."); openAccount(); return; }
   const items = state.cart.map((id) => products.find((p) => p.id === id)).filter(Boolean);
   if (!items.length) { showToast("상품을 먼저 담아 주세요."); return; }
   const result = window.currentResult || calculate(getInputs());
   if (!result.valid || result.safety === "danger") { showToast("안전 안내를 확인한 뒤 주문해 주세요."); closeCart(); return; }
   const order = { id: Date.now(), number: `FP-${new Date().getFullYear()}${String(Date.now()).slice(-6)}`, createdAt: new Date().toISOString(), items: items.map(({ id, name, price }) => ({ id, name, price })), total: items.reduce((sum, item) => sum + item.price, 0), planLabel: `${result.goal.months}개월 맞춤 플랜`, status: "주문 완료" };
-  state.orders.unshift(order); state.cart = []; persist(); renderProducts(); renderCart(); renderOrders(); closeCart(); showToast("데모 주문을 기록했어요.");
+  state.orders.unshift(order); state.cart = []; persist(); apiRequest("/api/orders", { method: "POST", body: JSON.stringify({ order }) }).catch(() => {}); renderProducts(); renderCart(); renderOrders(); closeCart(); showToast("주문 내역을 저장했어요.");
 }
 
 function formatDate(value) { return new Intl.DateTimeFormat("ko-KR", { month: "short", day: "numeric" }).format(new Date(value)); }
