@@ -7,6 +7,8 @@
     "binding": "ASSETS",
     "not_found_handling": "single-page-application"
   },
+  // D1 연결 후 아래 블록의 database_id를 실제 값으로 채우고 배포하세요.
+  // "d1_databases": [{ "binding": "DB", "database_name": "fitpath-db", "database_id": "<YOUR_DATABASE_ID>", "migrations_dir": "migrations" }],
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1
